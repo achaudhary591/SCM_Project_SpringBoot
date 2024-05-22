@@ -23,9 +23,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @Component
-public class OAuthAuthenicationSuccessHandler implements AuthenticationSuccessHandler {
+public class OAuthAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
-    Logger logger = LoggerFactory.getLogger(OAuthAuthenicationSuccessHandler.class);
+    Logger logger = LoggerFactory.getLogger(OAuthAuthenticationSuccessHandler.class);
 
     @Autowired
     private UserRepo userRepo;
@@ -36,7 +36,7 @@ public class OAuthAuthenicationSuccessHandler implements AuthenticationSuccessHa
             HttpServletResponse response,
             Authentication authentication) throws IOException, ServletException {
 
-        logger.info("OAuthAuthenicationSuccessHandler");
+        logger.info("OAuthAuthenticationSuccessHandler");
 
         // identify the provider
 
@@ -95,7 +95,7 @@ public class OAuthAuthenicationSuccessHandler implements AuthenticationSuccessHa
         }
 
         else {
-            logger.info("OAuthAuthenicationSuccessHandler: Unknown provider");
+            logger.info("OAuthAuthenticationSuccessHandler: Unknown provider");
         }
 
         // save the user
